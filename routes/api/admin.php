@@ -22,6 +22,6 @@ Route::group(['middleware' => 'auth:api'], function () {
     });
 
     Route::apiResources([
-        'posts' => 'PostController',
+        'post' => 'PostController',
     ]);
 });
