@@ -1,0 +1,280 @@
+{
+	"info": {
+		"_postman_id": "3f59c915-1f9b-4cc2-9a47-9efc235ee600",
+		"name": "API/admin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5075079"
+	},
+	"item": [
+		{
+			"name": "/login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const res = pm.response.json()",
+							"// console.log(res)",
+							"pm.environment.set(\"access_token\", res.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{{client_id}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{client_secret}}",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "admin@admin.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/admin/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"admin",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/post (index)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/admin/post",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"admin",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/post (store)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Something",
+							"description": "required",
+							"type": "text"
+						},
+						{
+							"key": "excerpt",
+							"value": "Something",
+							"description": "required",
+							"type": "text"
+						},
+						{
+							"key": "body",
+							"value": "Something",
+							"description": "required",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "Something",
+							"description": "required",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"description": "required|image",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/admin/post",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"admin",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/post/{id} (show)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/admin/post/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"admin",
+						"post",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/post/{id} (update)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Something",
+							"type": "text"
+						},
+						{
+							"key": "excerpt",
+							"value": "Something",
+							"type": "text"
+						},
+						{
+							"key": "body",
+							"value": "Something",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "Something",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"value": "Something",
+							"type": "text"
+						},
+						{
+							"key": "_method",
+							"value": "put",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/admin/post/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"admin",
+						"post",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/post/{id} (destroy)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "_method",
+							"value": "delete",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/admin/post/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"admin",
+						"post",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{access_token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

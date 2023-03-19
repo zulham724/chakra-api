@@ -1,77 +1,4 @@
-
-# Chakra UI Webservice
-
-API Gateway untuk Chakra UI Admin dengan Laravel 9
-
-[Github Chakra UI](https://github.com/zulham724/chakra-admin) 
-
-
-## Demo
-
-Untuk admin panel laravel dapat mengunjungi =>
-https://phpstack-469989-2205733.cloudwaysapps.com/admin
-
-Untuk admin panel Chakra UI dapat mengunjungi =>
-https://chakra-admin.vercel.app
-
-`email: admin@admin.com`
-`password: password`
-
-
-## Screenshots 
-
-![App Screenshot](https://s3.us-west-1.wasabisys.com/cdn-agpaiidigital.online/chakra/Voyager-Welcome-to-Voyager-The-Missing-Admin-for-Laravel.png)
-
-
-
-
-## Installation
-
-Install using composer
-
-```bash
-  cd my-project
-  composer install
-```
-
-```bash
-  php artisan key:generate
-```
-
-Setting database .env lalu
-
-
-```bash
-  php artisan voyager:install --with-dummy
-  php artisan passport:install
-```
-
-Laravel voyager --with-dummy akan sekalian menginstall table dasar dan seeder
-
-Lalu gunakan `client_id` dan `client_secret` di table oauth_clients untuk request API
-    
-## Environment Variables
-
-Filesystem menggunakan S3 
-
-`FILESYSTEM_DISK=wasabi`
-
-`WAS_ACCESS_KEY_ID=`
-`WAS_SECRET_ACCESS_KEY=`
-`WAS_DEFAULT_REGION=`
-`WAS_BUCKET=`
-
-Atau menggunakan menggunakan local filesystem saja hanya mengisi 
-
-`FILESYSTEM_DISK=local`
-
-
-
-
-
-# List API
-
-Selalu gunakan prefix url di setiap url dengan `/api/admin` lalu lanjutkan dengan End-point masing-masing
+# Project: API/admin
 
 ## End-point: /login
 ### Method: POST
@@ -160,16 +87,6 @@ Selalu gunakan prefix url di setiap url dengan `/api/admin` lalu lanjutkan denga
 
 
 
-## Documentation
-
-[Laravel](https://laravel.com)
-[Laravel Voyager](https://voyager-docs.devdojo.com/)
-[Laravel Passport](https://laravel.com/docs/9.x/passport)
-
-
-## Authors
-
-- [@zulham724](https://www.github.com/zulham724)
-
-
-
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
+_________________________________________________
+Powered By: [postman-to-markdown](https://github.com/bautistaj/postman-to-markdown/)
